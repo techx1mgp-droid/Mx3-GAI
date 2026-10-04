@@ -1,0 +1,68 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --bg-void: #0A0A0B;
+    --panel-deep: #121214;
+    --surface-mid: #1C1C1F;
+    --border-noir: #2A2A2E;
+    --text-primary: #E8E8EA;
+    --text-secondary: #8A8A93;
+    --accent-crimson: #C41E3A;
+    --accent-steel: #3A5F6F;
+    --accent-amber: #B8860B;
+  }
+
+  body {
+    background-color: var(--bg-void);
+    color: var(--text-primary);
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    overflow-x: hidden;
+  }
+
+  /* Monospace tabular numerals rule from frontend design constitution */
+  .font-mono, [data-mono="true"], code, pre {
+    font-family: 'JetBrains Mono', monospace;
+    font-variant-numeric: tabular-nums;
+  }
+}
+
+/* Subtle 3.5% noise texture overlay */
+.noir-noise {
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.035'/%3E%3C/svg%3E");
+}
+
+/* 1.8s slow crimson critical pulse */
+@keyframes crimsonPulse {
+  0%, 100% {
+    box-shadow: 0 0 0 0 rgba(196, 30, 58, 0.4), inset 0 0 15px rgba(196, 30, 58, 0.2);
+    border-color: rgba(196, 30, 58, 0.9);
+  }
+  50% {
+    box-shadow: 0 0 24px 2px rgba(196, 30, 58, 0.2), inset 0 0 25px rgba(196, 30, 58, 0.4);
+    border-color: rgba(196, 30, 58, 0.4);
+  }
+}
+
+.animate-crimson-pulse {
+  animation: crimsonPulse 1.8s ease-in-out infinite;
+}
+
+/* Terminal scrollbar */
+::-webkit-scrollbar {
+  width: 5px;
+  height: 5px;
+}
+
+::-webkit-scrollbar-track {
+  background: #0A0A0B;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #2A2A2E;
+  border-radius: 0px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #3A3A40;
+}

@@ -1,0 +1,6 @@
+{
+  "name": "Mx3 Client Portal",
+  "description": "Precision-strike operational interface for distressed high-revenue clients. Terminal-grade crisis management, threat vector diagnostics, and governance architecture.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
